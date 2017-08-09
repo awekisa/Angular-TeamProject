@@ -1,5 +1,5 @@
 const express = require('express')
-const authCheck = require('../middleware/auth-check')
+const authAdminCheck = require('../middleware/auth-admin-check')
 const Category = require('../data/Category')
 
 const router = new express.Router()
@@ -26,7 +26,7 @@ function validateCategoryForm (payload) {
 }
 
 // router.post('/products/add', authCheck, (req, res) => {
-router.post('/add', (req, res) => {   // change authCheck with adminCheck
+router.post('/add', authAdminCheck, (req, res) => {   // change authCheck with adminCheck
   const category = req.body
   // const userId = req.user._id    // fix admin issue
 
