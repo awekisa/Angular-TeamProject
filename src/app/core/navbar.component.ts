@@ -13,9 +13,9 @@ export class NavbarComponent implements OnInit {
     this.router.events.forEach((event) => {
       if(event instanceof NavigationEnd) {
         let token = this.authService.getToken()
-        let username = JSON.parse(this.authService.getUser()).username
+        let username = JSON.parse(this.authService.getUser())
         if(token && username) {
-          this.username = username
+          this.username = username.username
           this.authenticated = true
         } else {
           this.username = ''
