@@ -16,11 +16,8 @@ const routes: Routes = [
   {path: '', component: ListProductsComponent},
   {path: 'users/register', component: RegisterComponent},
   {path: 'users/login', component: LoginComponent},
-  {path: 'testimonials', component: ListTestimonialsComponent, 
-    children: [
-      {path: 'add', component: CreateTestimonialComponent, canActivate: [PrivateRoute]}
-    ]
-},
+  {path: 'testimonials/all', component: ListTestimonialsComponent},
+  {path: 'testimonials/add', component: CreateTestimonialComponent},
   {path: 'products/add', component: AddProductComponent, canActivate: [PrivateRoute]}
 ]
 

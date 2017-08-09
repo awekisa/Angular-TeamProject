@@ -1,26 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http'
+import { HttpService } from '../core/http.service'
 import 'rxjs/add/operator/toPromise'
 
-const url = 'localhost:3005/testimonials'
-
+@Injectable()
 export class TestimonialsService {
-    constructor (private http: Http) {}
+    constructor (private http: HttpService) {}
 
     getData(){
         return this.http
-            .get(url)
-            .toPromise()
-            .then(data => data.json())
-            .catch(err => console.log(err))
+            .get('testimonials/all-approved')
     }
 
     create(testimonial){
-        // return this.http
-        //     .post(url+'/add')
-        //     .toPromise()
-        //     .then(resp => resp.json())
-        //     .catch(err => console.log(err))
+        return this.http
+            .post('testimonials/add', testimonial)
     }
 }
 

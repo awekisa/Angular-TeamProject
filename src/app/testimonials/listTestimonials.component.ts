@@ -6,8 +6,8 @@ import {TestimonialsService} from './testimonial.service'
   providers: [TestimonialsService],
   template:`
     <ul>
-        <li *ngFor="testimonial of testimonials">
-        {{testimonial.newTestimonial}}
+        <li *ngFor="let testimonial of testimonials">
+        {{testimonial.text}}
         </li>
     </ul>
   `
@@ -19,6 +19,10 @@ export class ListTestimonialsComponent {
   constructor(private TestimonialsService: TestimonialsService){}
 
   ngOnInit(){
-    this.testimonials = this.TestimonialsService.getData()
+  this.TestimonialsService.getData()
+      .subscribe(data => {
+        console.log(data)
+        this.testimonials = data
+      })
   }
 }

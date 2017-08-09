@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
 import {TestimonialsService} from './testimonial.service'
-import {TestimonialModel} from './testimonialModel'
+import {TestimonialModel} from '../models/testimonialModel'
 
 @Component({
   selector: '',
   providers: [TestimonialsService],
   template:`
-      <form (ngSubmit)='submitTestimonial()' #testimonialForm="ngForm>
-         <input 
-         type="text" 
+      <form (ngSubmit)='submitTestimonial()' #testimonialForm="ngForm">
+        <textarea
          id="testimonial"
          placeholder='Write testimonial here..'
          name="testimonial"
-         [(ngModel)] = 'testimonial.testimonialText'
-         >
+         [(ngModel)] = 'testimonial.text'
+        ></textarea>
         <input type="submit">
-        <textarea></textarea>
       </form>
 
   `
@@ -26,11 +24,14 @@ export class CreateTestimonialComponent {
   testimonial: TestimonialModel
 
   constructor(private TestimonialsService: TestimonialsService){
-    this.testimonial = new TestimonialModel('')
+   this.testimonial = new TestimonialModel('')
   }
 
   submitTestimonial(){
-    this.TestimonialsService.create(this.testimonial)
+    console.log(this.testimonial)
+   this.TestimonialsService.create(this.testimonial).subscribe(res => {
+      console.log(res)
+    })
   }
 
 }
