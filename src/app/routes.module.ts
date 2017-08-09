@@ -21,6 +21,8 @@ const routes: Routes = [
   { path: '**', component: PageNotFoundComponent }
 ];
 
+//COMMENT TEST
+
 @NgModule({
   declarations: [],
   imports: [ RouterModule.forRoot(routes), 
