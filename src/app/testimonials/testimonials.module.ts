@@ -10,7 +10,10 @@ import {ListTestimonialsComponent} from './listTestimonials.component'
     ListTestimonialsComponent
   ],
   imports: [CommonModule, FormsModule],
-  exports: []
+  exports: [
+    CreateTestimonialComponent,
+    ListTestimonialsComponent
+  ]
 })
 
 export class TestimonialsModule { }

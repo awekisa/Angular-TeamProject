@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TestimonialsService} from './testimonial.http'
+import {TestimonialsService} from './testimonial.service'
 import {TestimonialModel} from './testimonialModel'
 
 @Component({
