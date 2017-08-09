@@ -1,34 +1,21 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import {CommonModule} from '@angular/common'
-// Component imports…
-import {HomeComponent} from './home.component'
-import {AboutComponent} from './about.component'
+import { RouterModule, Routes } from '@angular/router'
+import { NgModule } from '@angular/core'
 
-import {PageNotFoundComponent} from './pageNotFound.component'
-import {ListTestimonialsComponent} from './testimonials/listTestimonials.component'
+import { RegisterComponent } from './users/register.component'
+import { LoginComponent } from './users/login.component'
+
+import { AddCarComponent } from './cars/add-car.component'
+
+import { PrivateRoute } from './core/private.route'
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'about', component: AboutComponent },
-//   { path: 'testimonials', component: ListTestimonialsComponent
-//     //   children: [
-// //     {path: 'pesho', component: PeshoComponent},
-// //     {path: 'gosho', component: GoshoComponent}
-// //     ] 
-// },
-  { path: '**', component: PageNotFoundComponent }
-];
-
-//COMMENT TEST
+  {path: 'users/register', component: RegisterComponent},
+  {path: 'users/login', component: LoginComponent},
+  {path: 'cars/add', component: AddCarComponent, canActivate: [PrivateRoute]}
+]
 
 @NgModule({
-  declarations: [],
-  imports: [ RouterModule.forRoot(routes), 
-    FormsModule,
-    CommonModule
-   ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutesModule { }
+export class RoutesModule {}

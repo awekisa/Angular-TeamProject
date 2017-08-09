@@ -1,25 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import {AppRoutesModule} from './routes.module'
-import { HttpModule } from '@angular/http';
-// import {TestimonialsModule} from './testimonials/testimonials.module'
-import {HomeComponent} from './home.component'
-import {AboutComponent} from './about.component'
+import { BrowserModule } from '@angular/platform-browser'
+import { HttpModule } from '@angular/http'
+import { NgModule } from '@angular/core'
 
-import {PageNotFoundComponent} from './pageNotFound.component'
+import { RoutesModule } from './routes.module'
+import { CoreModule } from './core/core.module'
+
+import { UsersModule } from './users/users.module'
+import { CarsModule } from './cars/cars.module'
+
+import { AppComponent } from './app.component'
+
+import {ToastModule} from 'ng2-toastr/ng2-toastr'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    PageNotFoundComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutesModule,
-    HttpModule
+    HttpModule,
+    RoutesModule,
+    CoreModule,
+    UsersModule,
+    BrowserAnimationsModule,
+    CarsModule,
+    ToastModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

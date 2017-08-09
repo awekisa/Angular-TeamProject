@@ -1,10 +1,10 @@
-import { TeamProjectPage } from './app.po';
+import { GeneralTemplatePage } from './app.po';
 
-describe('team-project App', () => {
-  let page: TeamProjectPage;
+describe('general-template App', () => {
+  let page: GeneralTemplatePage;
 
   beforeEach(() => {
-    page = new TeamProjectPage();
+    page = new GeneralTemplatePage();
   });
 
   it('should display welcome message', () => {
