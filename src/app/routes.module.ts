@@ -5,29 +5,24 @@ import {CommonModule} from '@angular/common'
 // Component imports…
 import {HomeComponent} from './home.component'
 import {AboutComponent} from './about.component'
-import {} from './testimonials/tes'
+
 import {PageNotFoundComponent} from './pageNotFound.component'
 import {ListTestimonialsComponent} from './testimonials/listTestimonials.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'about', component: AboutComponent },
-  { path: 'testimonials', component: ListTestimonialsComponent
-    //   children: [
-//     {path: 'pesho', component: PeshoComponent},
-//     {path: 'gosho', component: GoshoComponent}
-//     ] 
-},
+//   { path: 'testimonials', component: ListTestimonialsComponent
+//     //   children: [
+// //     {path: 'pesho', component: PeshoComponent},
+// //     {path: 'gosho', component: GoshoComponent}
+// //     ] 
+// },
   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    AboutComponent,
-    PageNotFoundComponent,
-    ListTestimonialsComponent
-  ],
+  declarations: [],
   imports: [ RouterModule.forRoot(routes), 
     FormsModule,
     CommonModule
