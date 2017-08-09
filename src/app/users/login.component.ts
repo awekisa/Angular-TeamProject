@@ -21,10 +21,10 @@ export class LoginComponent {
 
   login() {
     this.userService.login(this.user).subscribe((res) => {
+      console.log(res)
       if(res.success) {
-        console.log(res)
         this.authService.authenticateUser(res.token)
-        this.authService.saveUser(res.user.name)
+        this.authService.saveUser(res.user)
         this.toastr.success(res.message)
         this.router.navigateByUrl('/')
       } else {

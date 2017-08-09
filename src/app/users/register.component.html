@@ -2,15 +2,9 @@
 <h1>Register User</h1>
 <form #registerForm='ngForm' (submit)='register()'>
   <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" name='name' #name='ngModel' [(ngModel)]='user.name' required />
-    <span [hidden]='name.valid || name.pristine'>Name is required!</span>
-  </div>
-
-  <div class="form-group">
-    <label for="email">E-mail</label>
-    <input type="text" class="form-control" id="email" name='email' #email='ngModel' [(ngModel)]='user.email' required />
-    <span [hidden]='email.valid || email.pristine'>Email is required!</span>
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" name='username' #username='ngModel' [(ngModel)]='user.username' required />
+    <span [hidden]='username.valid || username.pristine'>username is required!</span>
   </div>
 
   <div class="form-group">
@@ -23,6 +17,18 @@
     <label for="confirmPassword">Confirm password</label>
     <input type="password" class="form-control" id="confirmPassword" name='confirmPassword' #confirmPassword='ngModel' [(ngModel)]='user.confirmPassword' required />
     <span [hidden]='password.value === confirmPassword.value || confirmPassword.pristine'>Passwords do not match!</span>
+  </div>
+
+ <div class="form-group">
+    <label for="firstName">First name</label>
+    <input type="text" class="form-control" id="firstName" name='firstName' #firstName='ngModel' [(ngModel)]='user.firstName' required />
+    <span [hidden]='firstName.valid || firstName.pristine'>First name is required!</span>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last name</label>
+    <input type="text" class="form-control" id="lastName" name='lastName' #lastName='ngModel' [(ngModel)]='user.lastName' required />
+    <span [hidden]='lastName.valid || lastName.pristine'>Last name is required!</span>
   </div>
 
   <button type="submit" class="btn btn-success" [disabled]='!registerForm.form.valid || password.value !== confirmPassword.value || confirmPassword.pristine' >Submit</button>

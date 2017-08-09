@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core'
 export class AuthService {
 
   saveUser(user) {
-    window.localStorage.setItem('user', user)
+    window.localStorage.setItem('user', JSON.stringify(user))
   }
   
   getUser() {
