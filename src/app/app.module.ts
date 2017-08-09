@@ -6,7 +6,7 @@ import { RoutesModule } from './routes.module'
 import { CoreModule } from './core/core.module'
 
 import { UsersModule } from './users/users.module'
-import { CarsModule } from './cars/cars.module'
+import { ProductModule } from './products/products.module'
 
 import { AppComponent } from './app.component'
 
@@ -24,7 +24,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
     CoreModule,
     UsersModule,
     BrowserAnimationsModule,
-    CarsModule,
+    ProductModule,
     ToastModule.forRoot()
   ],
   providers: [],
