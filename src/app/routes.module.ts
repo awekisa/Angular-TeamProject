@@ -8,7 +8,7 @@ import {ListTestimonialsComponent} from './testimonials/listTestimonials.compone
 import {CreateTestimonialComponent} from './testimonials/createTestimonials.component'
 import { ContactsPageComponent } from './core/contacts.component'
 
-import {AboutUsComponent} from './about.component'
+import {AboutUsComponent} from './core/about.component'
 
 import { AddProductComponent } from './products/add-product.component'
 import { ListProductsComponent } from './products/list-product.component'
@@ -31,7 +31,6 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [AboutUsComponent],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

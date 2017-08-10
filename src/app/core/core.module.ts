@@ -9,9 +9,10 @@ import { AdminRoute } from './admin.route'
 
 import { NavbarComponent } from './navbar.component'
 import { ContactsPageComponent } from './contacts.component'
+import {AboutUsComponent} from './about.component'
 
 @NgModule({
-  declarations: [NavbarComponent, ContactsPageComponent],
+  declarations: [NavbarComponent, ContactsPageComponent, AboutUsComponent],
   imports: [
     RouterModule,
     CommonModule
