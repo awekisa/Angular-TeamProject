@@ -5,13 +5,16 @@ import { FormsModule } from '@angular/forms';
 
 import { CategoriesService } from './categories.service';
 
+import { AddCategoryComponent } from './add-category.component';
+import { CategoryTableComponent } from './category-table.component';
+
 
 @NgModule({
   imports: [CommonModule, RoutesModule, FormsModule],
-  declarations: [],
+  declarations: [AddCategoryComponent, CategoryTableComponent],
   providers: [CategoriesService],
-  exports: []
+  exports: [AddCategoryComponent, CategoryTableComponent]
 })
-export class CarsModule {
+export class CategoriesModule {
 
 }

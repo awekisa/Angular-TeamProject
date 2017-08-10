@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CategoryModel } from './category.model';
+import { CategoryModel } from '../models/category.model';
 import { CategoriesService } from './categories.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
