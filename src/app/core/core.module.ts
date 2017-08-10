@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router'
 import { HttpService } from './http.service'
 import { AuthService } from './auth.service'
 import { PrivateRoute } from './private.route'
+import { AdminRoute } from './admin.route'
 
 import { NavbarComponent } from './navbar.component'
 
@@ -14,7 +15,7 @@ import { NavbarComponent } from './navbar.component'
     RouterModule,
     CommonModule
   ],
-  providers: [HttpService, AuthService, PrivateRoute],
+  providers: [HttpService, AuthService, PrivateRoute, AdminRoute],
   exports: [NavbarComponent]
 })
 

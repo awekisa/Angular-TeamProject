@@ -21,7 +21,6 @@ export class LoginComponent {
 
   login() {
     this.userService.login(this.user).subscribe((res) => {
-      console.log(res)
       if(res.success) {
         this.authService.authenticateUser(res.token)
         this.authService.saveUser(res.user)

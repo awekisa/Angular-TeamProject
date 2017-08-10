@@ -12,6 +12,7 @@ import { ListProductsComponent } from './products/list-product.component'
 import { AdminConsoleComponent } from './admin-console/admin-console.component';
 
 import { PrivateRoute } from './core/private.route'
+import { AdminRoute } from './core/admin.route'
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path: 'testimonials/all', component: ListTestimonialsComponent},
   {path: 'testimonials/add', component: CreateTestimonialComponent},
   {path: 'products/add', component: AddProductComponent, canActivate: [PrivateRoute]},
-  {path: 'admin', component: AdminConsoleComponent}
+  {path: 'admin', component: AdminConsoleComponent, canActivate: [AdminRoute]}
 ]
 
 @NgModule({
