@@ -9,13 +9,18 @@ import { AuthService } from './auth.service'
 export class NavbarComponent implements OnInit {
   username = ''
   authenticated = false
+  isAdmin = false
+
   constructor(private authService: AuthService, private router: Router) {
     this.router.events.forEach((event) => {
       if(event instanceof NavigationEnd) {
         let token = this.authService.getToken()
-        let username = JSON.parse(this.authService.getUser())
-        if(token && username) {
-          this.username = username.username
+        let user = JSON.parse(this.authService.getUser())
+        if(token && user) {
+          if(user['isAdmin']) {
+            this.isAdmin = true
+          }
+          this.username = user.username
           this.authenticated = true
         } else {
           this.username = ''
@@ -27,9 +32,12 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     let token = this.authService.getToken()
-    let username = JSON.parse(this.authService.getUser())
-    if(token && username) {
-      this.username = username.username
+    let user = JSON.parse(this.authService.getUser())
+    if(token && user) {
+      if(user['isAdmin']) {
+            this.isAdmin = true
+      }
+      this.username = user.username
       this.authenticated = true
     }
   }
