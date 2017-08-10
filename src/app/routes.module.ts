@@ -25,13 +25,9 @@ const routes: Routes = [
   {path: 'testimonials/all', component: ListTestimonialsComponent},
   {path: 'testimonials/add', component: CreateTestimonialComponent},
   {path: 'products/add', component: AddProductComponent, canActivate: [PrivateRoute]},
-<<<<<<< HEAD
-  {path: 'admin', component: AdminConsoleComponent},
-  {path: 'about', component: AboutUsComponent}
-=======
   {path: 'admin', component: AdminConsoleComponent, canActivate: [AdminRoute]},
+   {path: 'about', component: AboutUsComponent},
   {path: 'contacts', component: ContactsPageComponent}
->>>>>>> origin/master
 ]
 
 @NgModule({
