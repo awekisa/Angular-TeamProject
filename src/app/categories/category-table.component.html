@@ -26,12 +26,10 @@
                 <td>{{category.name}}</td>
                 <td>{{category.date}}</td> 
                 <td>
-                  <a class='btn btn-default glyphicon glyphicon-edit' name={this.props.productId} onClick={this.props.editProduct}></a>
+                  <a class='btn btn-default glyphicon glyphicon-edit' name={{category._id}} (click)='editCategory(category)'></a>
                 </td>
                 <td>
-                  <a class='btn btn-danger glyphicon glyphicon-trash'
-                    name={this.props.productId}
-                    onClick={this.deleteProduct.bind(this)}>
+                  <a class='btn btn-danger glyphicon glyphicon-trash' name={{category._id}} (click)='deleteCategory(category)'>
                   </a>
                 </td>
               </tr>

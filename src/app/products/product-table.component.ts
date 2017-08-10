@@ -18,4 +18,12 @@ export class ProductTableComponent implements OnInit {
         this.products = res
       })
   }
+
+  editProduct (product) {
+    console.log(product)
+  }
+
+  deleteProduct (product) {
+    console.log(product)
+  }
 }

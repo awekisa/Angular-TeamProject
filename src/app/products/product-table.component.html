@@ -32,12 +32,12 @@
                 <td>{{product.price}}</td>
                 <td>{{product.category}}</td> 
                 <td>
-                  <a class='btn btn-default glyphicon glyphicon-edit' name={this.props.productId} onClick={this.props.editProduct}></a>
+                  <a class='btn btn-default glyphicon glyphicon-edit' name={{product._id}} (click)='editProduct(product)'></a>
                 </td>
                 <td>
                   <a class='btn btn-danger glyphicon glyphicon-trash'
-                    name={this.props.productId}
-                    onClick={this.deleteProduct.bind(this)}>
+                    name={{product._id}}
+                    (click)='deleteProduct(product)'>
                   </a>
                 </td>
               </tr>

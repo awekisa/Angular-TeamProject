@@ -18,4 +18,12 @@ export class CategoryTableComponent implements OnInit {
         this.categories = res
       })
   }
+
+  editCategory (category) {
+    console.log(category);
+  }
+
+  deleteCategory (category) {
+    console.log(category);
+  }
 }

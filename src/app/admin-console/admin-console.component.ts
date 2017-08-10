@@ -9,6 +9,7 @@ export class AdminConsoleComponent {
   productsList: boolean = false;
   categoryAdd: boolean = false;
   categoriesList: boolean = false;
+  categoryEdit: boolean = false;
   testimonialsList: boolean = false;
 
   clickProductAdd () {
