@@ -9,7 +9,7 @@ import { CategoriesService } from './categories.service';
 export class CategoryTableComponent implements OnInit { 
   categories
   @Output() editCategoryInfo = new EventEmitter<boolean>();
-  @Output() deleteCategoryInfo = new EventEmitter<boolean>()
+  @Output() deleteCategoryInfo = new EventEmitter<boolean>();
 
   constructor (private categoriesService: CategoriesService) {}
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { ProductService } from './product.service';
 
@@ -8,6 +8,8 @@ import { ProductService } from './product.service';
 })
 export class ProductTableComponent implements OnInit { 
   products
+  @Output() editProductInfo = new EventEmitter<boolean>();
+  @Output() deleteProductInfo = new EventEmitter<boolean>();
 
   constructor (private productService: ProductService) {}
 
@@ -20,10 +22,10 @@ export class ProductTableComponent implements OnInit {
   }
 
   editProduct (product) {
-    console.log(product)
+     this.editProductInfo.emit(product)
   }
 
   deleteProduct (product) {
-    console.log(product)
+    this.deleteProductInfo.emit(product)
   }
 }

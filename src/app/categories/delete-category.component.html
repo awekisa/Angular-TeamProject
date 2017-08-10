@@ -7,11 +7,9 @@
       type="text" class="form-control"
       id="name"
       name='name'
-      #name='ngModel'
-      [(ngModel)]='category.name' required />
-    <span [hidden]='name.valid || name.pristine'>Name is required!</span>
+      [(ngModel)]='category.name' required disabled/>
   </div>
 
-  <button type="submit" class="btn btn-success" [disabled]='!categoryForm.form.valid' >Submit</button> 
+  <button type="submit" class="btn btn-success">Submit</button> 
 
 </form>

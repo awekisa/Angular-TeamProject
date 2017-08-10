@@ -38,7 +38,9 @@
     <add-product></add-product>
   </div>
   <div *ngIf='productsList'>
-    <product-table></product-table>
+    <product-table 
+      (editProductInfo)='editProductDataRecieved($event)'
+      (deleteProductInfo)='deleteProductDataRecieved($event)'></product-table>
   </div>
   <div *ngIf='categoryAdd'>
     <add-category></add-category>
@@ -51,6 +53,13 @@
   <div *ngIf='testimonialsList'>
    <testimonialsTable></testimonialsTable>
   </div>
+
+  <div *ngIf='productEdit'>
+    <edit-product [product]='product'></edit-product>
+  </div>
+   <div *ngIf='productDelete'>
+    <delete-product [product]='product'></delete-product>
+  </div> 
 
   <div *ngIf='categoryEdit'>
     <edit-category [category]='category'></edit-category>

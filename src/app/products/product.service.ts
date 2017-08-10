@@ -14,4 +14,12 @@ export class ProductService {
     return this.httpService.get('products/all')
   }
 
+  edit(product) {
+    return this.httpService.post(`products/edit`, product, true)
+  }
+
+  delete (id) {
+    return this.httpService.post(`products/delete/${id}`, null, true)
+  }
+
 }

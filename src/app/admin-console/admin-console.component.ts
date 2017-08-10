@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 export class AdminConsoleComponent {
   productAdd: boolean = false;
   productsList: boolean = false;
+  productEdit: boolean = false;
+  productDelete: boolean = false;
+  product;
   categoryAdd: boolean = false;
   categoriesList: boolean = false;
   categoryEdit: boolean = false;
@@ -44,11 +47,25 @@ export class AdminConsoleComponent {
   makeAllPropsFalse () {
     this.productAdd = false;
     this.productsList = false;
+    this.productEdit = false;
+    this.productDelete = false;
     this.categoryAdd = false;
     this.categoryEdit = false;
     this.categoryDelete = false;
     this.categoriesList = false;
     this.testimonialsList = false; 
+  }
+
+    editProductDataRecieved (data) {
+    this.makeAllPropsFalse ();
+    this.productEdit = true;
+    this.product = data;
+  }
+
+  deleteProductDataRecieved (data) {
+    this.makeAllPropsFalse ();
+    this.productDelete = true;
+    this.product = data
   }
 
   editDataRecieved (data) {

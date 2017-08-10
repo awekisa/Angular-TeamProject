@@ -130,9 +130,9 @@ router.get('/details/:id', (req, res) => {
   })
 })
 
-router.post('/delete/:id', (req, res) => {
+router.post('/delete/:id', authAdminCheck, (req, res) => {
   const id = req.params.id
-  
+
   Product.deleteOne({_id: id}).then((product) => {
     res.status(200).json({
       success: true
@@ -140,7 +140,7 @@ router.post('/delete/:id', (req, res) => {
   })
 })
 
-router.post('/edit', (req, res) => {
+router.post('/edit', authAdminCheck, (req, res) => {
   const product = req.body
 
   let id = product._id
@@ -157,58 +157,6 @@ router.post('/edit', (req, res) => {
       success: true
     })
   })
-})
-
-router.post('/details/:id/comments/create', authCheck, (req, res) => {
-  // const id = req.params.id
-  // const user = req.user.name
-
-  // let pet = petsData.findById(id)
-
-  // if (!pet) {
-  //   return res.status(200).json({
-  //     success: false,
-  //     message: 'Pet does not exists!'
-  //   })
-  // }
-
-  // const comment = req.body
-
-  // if (!comment.message || typeof comment.message !== 'string' || comment.message.length < 10) {
-  //   return res.status(200).json({
-  //     success: false,
-  //     message: 'Comment message must be at least 10 symbols.'
-  //   })
-  // }
-
-  // petsData.addComment(id, comment.message, user)
-
-  // res.status(200).json({
-  //   success: true,
-  //   message: 'Comment added successfuly.',
-  //   comment: {
-  //     id,
-  //     message: comment.message,
-  //     user
-  //   }
-  // })
-})
-
-router.get('/details/:id/comments', authCheck, (req, res) => {
-  // const id = req.params.id
-
-  // const pet = petsData.findById(id)
-
-  // if (!pet) {
-  //   return res.status(200).json({
-  //     success: false,
-  //     message: 'Pet does not exists!'
-  //   })
-  // }
-
-  // const response = petsData.allComments(id)
-
-  // res.status(200).json(response)
 })
 
 module.exports = router
