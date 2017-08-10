@@ -10,7 +10,10 @@ export class AdminConsoleComponent {
   categoryAdd: boolean = false;
   categoriesList: boolean = false;
   categoryEdit: boolean = false;
+  categoryDelete: boolean = false;
+  category;
   testimonialsList: boolean = false;
+
 
   clickProductAdd () {
     this.makeAllPropsFalse();
@@ -42,8 +45,22 @@ export class AdminConsoleComponent {
     this.productAdd = false;
     this.productsList = false;
     this.categoryAdd = false;
+    this.categoryEdit = false;
+    this.categoryDelete = false;
     this.categoriesList = false;
     this.testimonialsList = false; 
+  }
+
+  editDataRecieved (data) {
+    this.makeAllPropsFalse ();
+    this.categoryEdit = true;
+    this.category = data;
+  }
+
+  deleteDataRecieved (data) {
+    this.makeAllPropsFalse ();
+    this.categoryDelete = true;
+    this.category = data
   }
 
 }

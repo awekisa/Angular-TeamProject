@@ -1,0 +1,17 @@
+
+<h1>Delete Category</h1>
+<form #categoryForm='ngForm' (submit)='delete()'>
+   <div class="form-group">
+    <label for="name">Name</label>
+    <input 
+      type="text" class="form-control"
+      id="name"
+      name='name'
+      #name='ngModel'
+      [(ngModel)]='category.name' required />
+    <span [hidden]='name.valid || name.pristine'>Name is required!</span>
+  </div>
+
+  <button type="submit" class="btn btn-success" [disabled]='!categoryForm.form.valid' >Submit</button> 
+
+</form>

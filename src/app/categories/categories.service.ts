@@ -13,17 +13,17 @@ export class CategoriesService {
     return this.httpService.get(`categories/all`);
   }
 
-  editGet (id) {
-    return this.httpService.get(`categories/edit/${id}`);
-  }
+  // editGet (id) {
+  //   return this.httpService.get(`categories/edit/${id}`);
+  // }
 
   editPost (id, category) {
     return this.httpService.post(`categories/edit/${id}`, category, true);
   }
 
-  deleteGet (id) {
-    return this.httpService.get(`categories/delete/${id}`);  
-  }
+  // deleteGet (id) {
+  //   return this.httpService.get(`categories/delete/${id}`);  
+  // }
 
   deletePost (id) {
     return this.httpService.post(`categories/delete/${id}`, null, true);  

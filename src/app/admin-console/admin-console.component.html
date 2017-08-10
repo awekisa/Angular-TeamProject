@@ -44,9 +44,18 @@
     <add-category></add-category>
   </div>
   <div *ngIf='categoriesList'>
-    <category-table></category-table>
+    <category-table 
+      (editCategoryInfo)='editDataRecieved($event)'
+      (deleteCategoryInfo)='deleteDataRecieved($event)'></category-table>
   </div>
   <div *ngIf='testimonialsList'>
    <testimonialsTable></testimonialsTable>
+  </div>
+
+  <div *ngIf='categoryEdit'>
+    <edit-category [category]='category'></edit-category>
+  </div>
+  <div *ngIf='categoryDelete'>
+    <delete-category [category]='category'></delete-category>
   </div>
 </div>

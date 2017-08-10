@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { CategoriesService } from './categories.service';
 
@@ -8,6 +8,8 @@ import { CategoriesService } from './categories.service';
 })
 export class CategoryTableComponent implements OnInit { 
   categories
+  @Output() editCategoryInfo = new EventEmitter<boolean>();
+  @Output() deleteCategoryInfo = new EventEmitter<boolean>()
 
   constructor (private categoriesService: CategoriesService) {}
 
@@ -20,10 +22,10 @@ export class CategoryTableComponent implements OnInit {
   }
 
   editCategory (category) {
-    console.log(category);
+    this.editCategoryInfo.emit(category)
   }
 
   deleteCategory (category) {
-    console.log(category);
+     this.deleteCategoryInfo.emit(category)
   }
 }
