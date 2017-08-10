@@ -45,8 +45,6 @@ export class HttpService {
       headers: headers
     })
 
-    console.log(requestOptions)
-
     return this.http
       .get(`${baseUrl}${url}`, requestOptions)
       .map(res => res.json())

@@ -1,0 +1,51 @@
+<div class="container itemsEdit">
+  <div class="row">
+    <div class="col-md-12 col-md-offset-1">
+      <div class="panel panel-default panel-table">
+        <div class="panel-heading">
+            <div class="row">
+              <div class="">
+                <h3 class="panel-title">Manage Testimonials</h3>
+              </div>
+            </div>
+        </div>
+        <div class="panel-body col-md-10">
+          <table class="table table-striped table-bordered table-list">
+            <thead>
+              <tr>
+                  <th width='15%'>Id</th>
+                  <th width='15%'>Approved</th>
+                  <th width='15%'>Text</th>
+                  <th width='15%'>Full Name</th>
+                  <th width='15%'>Company</th>
+                  <th width='15%'>Date</th>
+                  <th width='15%'>Edit</th>
+                  <th width='15%'>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let testimonial of testimonials">
+                <td className='hidden-xs'>{{testimonial._id}}</td>
+                <td>{{testimonial.approved}}</td>
+                <td>{{testimonial.text}}</td>
+                <td>{{testimonial.fullName}}</td>
+                <td>{{testimonial.company}}</td>
+                <td>{{testimonial.date.toLocaleString()}}</td>
+                <td>
+                  <a class='btn btn-default glyphicon glyphicon-edit' name={{testimonial._id}} (click)='editTestimonial(testimonial)'></a>
+                </td>
+                <td>
+                   <a class='btn btn-danger glyphicon glyphicon-trash'
+                    name={{testimonial._id}}
+                    (click)='deleteTestimonial(testimonial)'>
+                  </a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
