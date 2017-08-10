@@ -20,10 +20,10 @@ export class ListTestimonialsForAdminComponent {
   }
 
   editTestimonial(testimonial){
-    console.log(testimonial)
+    return testimonial
   }
 
   deleteTestimonial(testimonial){
-
+    return testimonial
   }
 }
