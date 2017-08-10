@@ -8,7 +8,7 @@ import { CoreModule } from './core/core.module'
 import { UsersModule } from './users/users.module'
 import { ProductModule } from './products/products.module'
 import {TestimonialsModule} from './testimonials/testimonials.module'
-// import { CategoriesModule } from './categories/categories.module';
+import { CategoriesModule } from './categories/categories.module';
 import { AdminConsoleModule } from './admin-console/admin-console.module';
 
 import { AppComponent } from './app.component'
