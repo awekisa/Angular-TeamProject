@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {TestimonialsService} from './testimonial.service'
-import {TestimonialModel} from '../models/testimonialModel'
+import {TestimonialModel} from '../models/testimonial.model'
 
 @Component({
   selector: '',

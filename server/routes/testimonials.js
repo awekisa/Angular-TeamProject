@@ -63,7 +63,7 @@ router.post('/add', authCheck, (req, res) => {
         testimonial
       })
     })
-})
+}) 
 
 router.get('/all-approved', (req, res) => {
   Testimonial

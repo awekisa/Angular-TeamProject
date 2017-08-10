@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 import {CreateTestimonialComponent} from './createTestimonials.component'
 import {ListTestimonialsComponent} from './listTestimonials.component'
 import {TestimonialsService} from './testimonial.service'
+import {ListTestimonialsForAdminComponent} from './listTestimonialsForAdmin.component'
 
 @NgModule({
   declarations: [
     CreateTestimonialComponent,
-    ListTestimonialsComponent
+    ListTestimonialsComponent,
+    ListTestimonialsForAdminComponent
   ],
   providers: [TestimonialsService],
   imports: [CommonModule, FormsModule],
-  exports: [
-    CreateTestimonialComponent,
-    ListTestimonialsComponent
-  ]
+  exports: [ListTestimonialsComponent, ListTestimonialsForAdminComponent]
 })
 
 export class TestimonialsModule { }

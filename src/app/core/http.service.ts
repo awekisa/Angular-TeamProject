@@ -10,13 +10,16 @@ const baseUrl = 'http://localhost:3005/'
 export class HttpService {
   constructor(private http: Http, private authService: AuthService) {}
 
-  post(url, data) {
+  post(url, data, auth) {
 
     const headers = new Headers({
       'Content-type' : 'application/json'
     })
 
-    headers.append('Authorization', `beared ${this.authService.getToken()}`)
+    if(auth) {
+      let token = this.authService.getToken()
+      headers.append('Authorization', `Bearer ${token}`)
+    }
 
     const requestOptions = new RequestOptions({
       headers: headers
@@ -28,8 +31,24 @@ export class HttpService {
   }
 
   get(url) {
+
+ const headers = new Headers({
+      'Content-type' : 'application/json'
+    })
+   
+    if(this.authService.isUserAuthenticated()) {
+      let token = this.authService.getToken()
+      headers.append('Authorization', `Bearer ${token}`)
+    }
+
+    const requestOptions = new RequestOptions({
+      headers: headers
+    })
+
+    console.log(requestOptions)
+
     return this.http
-      .get(`${baseUrl}${url}`)
+      .get(`${baseUrl}${url}`, requestOptions)
       .map(res => res.json())
   }
 }

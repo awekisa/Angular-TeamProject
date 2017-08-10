@@ -19,7 +19,7 @@ export class ListTestimonialsComponent {
   constructor(private TestimonialsService: TestimonialsService){}
 
   ngOnInit(){
-  this.TestimonialsService.getData()
+  this.TestimonialsService.getDataApproved()
       .subscribe(data => {
         console.log(data)
         this.testimonials = data

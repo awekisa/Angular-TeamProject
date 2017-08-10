@@ -6,14 +6,27 @@ import 'rxjs/add/operator/toPromise'
 export class TestimonialsService {
     constructor (private http: HttpService) {}
 
-    getData(){
+    getDataApproved(){
         return this.http
             .get('testimonials/all-approved')
     }
 
+    getDataForApproval(){
+        return this.http
+            .get('testimonials/all')
+    }
+
     create(testimonial){
         return this.http
-            .post('testimonials/add', testimonial)
+            .post('testimonials/add', testimonial, true)
+    }
+
+    edit (testimonial, testimonialId){
+        return this.http.post(`testimonials/edit/${testimonialId}`, testimonial, true)
+    }
+
+    delete (testimonial, testimonialId){
+        return this.http.post(`testimonials/delete/${testimonialId}`,testimonial, true)
     }
 }
 

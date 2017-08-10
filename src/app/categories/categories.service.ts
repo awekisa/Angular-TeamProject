@@ -6,7 +6,7 @@ export class CategoriesService {
   constructor(private httpService: HttpService) {}
 
   add (category) {
-    return this.httpService.post('categories/add', category);
+    return this.httpService.post('categories/add', category, true);
   }
 
   all () {
@@ -18,7 +18,7 @@ export class CategoriesService {
   }
 
   editPost (id, category) {
-    return this.httpService.post(`categories/edit/${id}`, category);
+    return this.httpService.post(`categories/edit/${id}`, category, true);
   }
 
   deleteGet (id) {
@@ -26,6 +26,6 @@ export class CategoriesService {
   }
 
   deletePost (id) {
-    return this.httpService.post(`categories/delete/${id}`, null);  
+    return this.httpService.post(`categories/delete/${id}`, null, true);  
   }
 }
