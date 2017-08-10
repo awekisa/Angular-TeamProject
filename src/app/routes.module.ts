@@ -6,6 +6,7 @@ import { LoginComponent } from './users/login.component'
 
 import {ListTestimonialsComponent} from './testimonials/listTestimonials.component'
 import {CreateTestimonialComponent} from './testimonials/createTestimonials.component'
+import { ContactsPageComponent } from './core/contacts.component'
 
 import { AddProductComponent } from './products/add-product.component'
 import { ListProductsComponent } from './products/list-product.component'
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'testimonials/all', component: ListTestimonialsComponent},
   {path: 'testimonials/add', component: CreateTestimonialComponent},
   {path: 'products/add', component: AddProductComponent, canActivate: [PrivateRoute]},
-  {path: 'admin', component: AdminConsoleComponent, canActivate: [AdminRoute]}
+  {path: 'admin', component: AdminConsoleComponent, canActivate: [AdminRoute]},
+  {path: 'contacts', component: ContactsPageComponent}
 ]
 
 @NgModule({

@@ -8,15 +8,16 @@ import { PrivateRoute } from './private.route'
 import { AdminRoute } from './admin.route'
 
 import { NavbarComponent } from './navbar.component'
+import { ContactsPageComponent } from './contacts.component'
 
 @NgModule({
-  declarations: [NavbarComponent],
+  declarations: [NavbarComponent, ContactsPageComponent],
   imports: [
     RouterModule,
     CommonModule
   ],
   providers: [HttpService, AuthService, PrivateRoute, AdminRoute],
-  exports: [NavbarComponent]
+  exports: [NavbarComponent, ContactsPageComponent]
 })
 
 export class CoreModule {}
