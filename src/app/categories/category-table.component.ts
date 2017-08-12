@@ -22,10 +22,10 @@ export class CategoryTableComponent implements OnInit {
   }
 
   editCategory (category) {
-    this.editCategoryInfo.emit(category)
+    this.editCategoryInfo.emit(category);
   }
 
   deleteCategory (category) {
-     this.deleteCategoryInfo.emit(category)
+     this.deleteCategoryInfo.emit(category);
   }
 }

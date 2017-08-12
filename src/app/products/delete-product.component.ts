@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../models/product.model';
 import { ProductService } from './product.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
@@ -9,6 +9,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 })
 export class DeleteProductComponent {
   @Input() product;
+  @Output() redirectToProducts = new EventEmitter<boolean>();
 
   constructor (
     private productService: ProductService,
@@ -20,11 +21,10 @@ export class DeleteProductComponent {
       .delete(this.product._id)
       .subscribe((res) => {
         if(res) {
-          // this.router.navigateByUrl('users/login')
-          this.toastr.success('Product was deleted.')
+          this.redirectToProducts.emit(true);
+          this.toastr.success('Product was deleted.');
         } else {
-          // let firstError = Object.keys(res.errors)[0]
-          this.toastr.error('Failed to delete product')
+          this.toastr.error('Failed to delete product');
         }
     })
   }

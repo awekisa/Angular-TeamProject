@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CategoriesService } from './categories.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
@@ -8,6 +8,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 })
 export class DeleteCategoryComponent { 
   @Input() category;
+  @Output() redirectToCategories = new EventEmitter<boolean>();
 
   constructor(
     private categoriesService: CategoriesService,
@@ -20,6 +21,7 @@ export class DeleteCategoryComponent {
 
         if(res) {
           // this.router.navigateByUrl('users/login')
+          this.redirectToCategories.emit(true);
           this.toastr.success('Category deleted!');
         } else {
           // let firstError = Object.keys(res.errors)[0]

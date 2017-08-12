@@ -79,5 +79,4 @@ export class AdminConsoleComponent {
     this.categoryDelete = true;
     this.category = data
   }
-
 }

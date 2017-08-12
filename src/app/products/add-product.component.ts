@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from '../models/product.model';
 import { ProductService } from './product.service';
 import { CategoriesService } from '../categories/categories.service';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'add-product',
@@ -10,10 +11,12 @@ import { CategoriesService } from '../categories/categories.service';
 export class AddProductComponent implements OnInit{
   product = new Product();
   categories;
+  @Output() redirectToProducts = new EventEmitter<boolean>();
 
   constructor(
     private productService: ProductService,
-    private categoriesService: CategoriesService) {}
+    private categoriesService: CategoriesService,
+    private toastr: ToastsManager) {}
 
   ngOnInit () {
     this.categoriesService
@@ -25,7 +28,13 @@ export class AddProductComponent implements OnInit{
 
   createProduct() {
     this.productService.create(this.product).subscribe(res => {
-      console.log(res)
+      if (res) {
+        this.toastr.success('Product was created.');
+        this.redirectToProducts.emit(true);
+      } else {
+        this.toastr.error('Failed to create product.')
+      }
+      
     })
   }
 

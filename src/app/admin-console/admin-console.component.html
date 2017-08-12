@@ -35,7 +35,7 @@
 
 <div class="content-holder">
   <div *ngIf='productAdd'>
-    <add-product></add-product>
+    <add-product (redirectToProducts)='clickProductsList($event)'></add-product>
   </div>
   <div *ngIf='productsList'>
     <product-table 
@@ -43,7 +43,7 @@
       (deleteProductInfo)='deleteProductDataRecieved($event)'></product-table>
   </div>
   <div *ngIf='categoryAdd'>
-    <add-category></add-category>
+    <add-category (redirectToCategories)='clickCategoriesList($event)'></add-category>
   </div>
   <div *ngIf='categoriesList'>
     <category-table 
@@ -55,16 +55,16 @@
   </div>
 
   <div *ngIf='productEdit'>
-    <edit-product [product]='product'></edit-product>
+    <edit-product [product]='product' (redirectToProducts)='clickProductsList($event)'></edit-product>
   </div>
    <div *ngIf='productDelete'>
-    <delete-product [product]='product'></delete-product>
+    <delete-product [product]='product' (redirectToProducts)='clickProductsList($event)'></delete-product>
   </div> 
 
   <div *ngIf='categoryEdit'>
-    <edit-category [category]='category'></edit-category>
+    <edit-category [category]='category' (redirectToCategories)='clickCategoriesList($event)'></edit-category>
   </div>
   <div *ngIf='categoryDelete'>
-    <delete-category [category]='category'></delete-category>
+    <delete-category [category]='category' (redirectToCategories)='clickCategoriesList($event)'></delete-category>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CategoryModel } from '../models/category.model';
 import { CategoriesService } from './categories.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
@@ -9,6 +9,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 })
 export class EditCategoryComponent { 
   @Input() category;
+  @Output() redirectToCategories = new EventEmitter<boolean>();
 
   constructor(
     private categoriesService: CategoriesService,
@@ -21,10 +22,9 @@ export class EditCategoryComponent {
       .editPost(this.category._id, this.category)
       .subscribe((res) => {
         if(res) {
-          // this.router.navigateByUrl('users/login')
+          this.redirectToCategories.emit(true);
           this.toastr.success('Category was edited.')
         } else {
-          // let firstError = Object.keys(res.errors)[0]
           this.toastr.error('Failed to edit category')
         }
     })
