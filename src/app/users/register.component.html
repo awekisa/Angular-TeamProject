@@ -7,6 +7,24 @@
     <span [hidden]='username.valid || username.pristine'>username is required!</span>
   </div>
 
+   <div class="form-group">
+    <label for="firstName">First name</label>
+    <input type="text" class="form-control" id="firstName" name='firstName' #firstName='ngModel' [(ngModel)]='user.firstName' required />
+    <span [hidden]='firstName.valid || firstName.pristine'>First name is required!</span>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last name</label>
+    <input type="text" class="form-control" id="lastName" name='lastName' #lastName='ngModel' [(ngModel)]='user.lastName' required />
+    <span [hidden]='lastName.valid || lastName.pristine'>Last name is required!</span>
+  </div>
+
+  <div class="form-group">
+    <label for="company">Company</label>
+    <input type="text" class="form-control" id="company" name='company' #company='ngModel' [(ngModel)]='user.company' required />
+    <span [hidden]='company.valid || company.pristine'>Company name is required!</span>
+  </div>
+
   <div class="form-group">
     <label for="password">Password</label>
     <input type="password" class="form-control" id="password" name='password' #password='ngModel' [(ngModel)]='user.password' required />
@@ -17,18 +35,6 @@
     <label for="confirmPassword">Confirm password</label>
     <input type="password" class="form-control" id="confirmPassword" name='confirmPassword' #confirmPassword='ngModel' [(ngModel)]='user.confirmPassword' required />
     <span [hidden]='password.value === confirmPassword.value || confirmPassword.pristine'>Passwords do not match!</span>
-  </div>
-
- <div class="form-group">
-    <label for="firstName">First name</label>
-    <input type="text" class="form-control" id="firstName" name='firstName' #firstName='ngModel' [(ngModel)]='user.firstName' required />
-    <span [hidden]='firstName.valid || firstName.pristine'>First name is required!</span>
-  </div>
-
-  <div class="form-group">
-    <label for="lastName">Last name</label>
-    <input type="text" class="form-control" id="lastName" name='lastName' #lastName='ngModel' [(ngModel)]='user.lastName' required />
-    <span [hidden]='lastName.valid || lastName.pristine'>Last name is required!</span>
   </div>
 
   <button type="submit" class="btn btn-success" [disabled]='!registerForm.form.valid || password.value !== confirmPassword.value || confirmPassword.pristine' >Submit</button>

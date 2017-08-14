@@ -13,7 +13,7 @@ import {TestimonialModel} from '../models/testimonial.model'
          placeholder='Write testimonial here..'
          name="testimonial"
          [(ngModel)] = 'testimonial.text'
-        ></textarea>
+        ></textarea><br />
         <input type="submit">
       </form>
 

@@ -23,6 +23,10 @@ export class AddProductComponent implements OnInit{
       .all()
       .subscribe(res => {
         this.categories = res
+
+        if (res.length > 0) {
+          this.product.category = res[0].name;
+        }
       })
   }
 
