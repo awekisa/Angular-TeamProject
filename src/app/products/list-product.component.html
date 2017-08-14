@@ -1,6 +1,6 @@
 <h1>All products</h1>
-<div>
-  <div *ngFor='let product of products'>
+<div class='col-md-12'>
+  <div *ngFor='let product of products' class='col-md-4 image-product'>
     <div>{{product.title}}</div>
     <img src='{{product.image}}' />
     <div>{{product.description}}</div>

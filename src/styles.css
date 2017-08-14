@@ -2060,3 +2060,10 @@ input:focus{
   background-color: orange;
   color: grey;
 }
+
+.image-product img {
+  height: 200px;
+  widows: 200px;
+  max-height: 200px;
+  max-width: 200px
+}
