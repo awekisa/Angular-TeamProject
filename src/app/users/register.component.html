@@ -1,6 +1,6 @@
 
 <h1>Register User</h1>
-<form #registerForm='ngForm' (submit)='register()'>
+<form #registerForm='ngForm' class='col-md-6 col-md-offset-3' (submit)='register()'>
   <div class="form-group">
     <label for="username">Username</label>
     <input type="text" class="form-control" id="username" name='username' #username='ngModel' [(ngModel)]='user.username' required />
