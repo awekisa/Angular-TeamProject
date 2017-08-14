@@ -5,11 +5,11 @@ import {TestimonialsService} from './testimonial.service'
   selector: '',
   providers: [TestimonialsService],
   template:`
-    <ul>
+    <div>
         <li *ngFor="let testimonial of testimonials">
         {{testimonial.text}}
         </li>
-    </ul>
+    </div>
   `
 })
 
