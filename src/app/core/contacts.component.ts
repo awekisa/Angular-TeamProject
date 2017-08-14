@@ -11,9 +11,8 @@ export class ContactsPageComponent {
     constructor(private testimonialsService: TestimonialsService) {}
 
     ngOnInit(){
-      //TODO: Change getDataForApproval with getDataApproved when we have approved testimonials by admin
-    //  this.testimonialsService.getDataForApproval().subscribe(res => {
-    //        this.testimonialsNumber = res.length
-    //     } )
+     this.testimonialsService.getDataApproved().subscribe(res => {
+           this.testimonialsNumber = res.length
+      })
   }
 }
