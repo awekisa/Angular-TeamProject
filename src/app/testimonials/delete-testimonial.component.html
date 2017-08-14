@@ -1,0 +1,10 @@
+      <form (ngSubmit)='deleteTestimonial()' #testimonialForm="ngForm">
+        <textarea
+         id="testimonial"
+         placeholder='testimonial.text'
+         name="testimonial"
+         [(ngModel)] = 'testimonial.text'
+         disabled ></textarea><br />
+         <input type='button' id='approved' name='approved' (click)='changeStatus()' value={{approveButtonName}} disabled /><br />
+        <input type="submit">
+      </form>

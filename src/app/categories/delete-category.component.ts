@@ -20,11 +20,9 @@ export class DeleteCategoryComponent {
       .subscribe((res) => {
 
         if(res) {
-          // this.router.navigateByUrl('users/login')
           this.redirectToCategories.emit(true);
           this.toastr.success('Category deleted!');
         } else {
-          // let firstError = Object.keys(res.errors)[0]
           this.toastr.error('Failed to delete category');
         }
     })

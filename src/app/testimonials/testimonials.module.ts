@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {CreateTestimonialComponent} from './createTestimonials.component'
 import {ListTestimonialsComponent} from './listTestimonials.component'
+import { EditTestimonialComponent } from './edit-testimonial.component';
+import { DeleteTestimonialComponent } from './delete-testimonial.component';
 import {TestimonialsService} from './testimonial.service'
 import {ListTestimonialsForAdminComponent} from './listTestimonialsForAdmin.component'
 
@@ -10,11 +12,13 @@ import {ListTestimonialsForAdminComponent} from './listTestimonialsForAdmin.comp
   declarations: [
     CreateTestimonialComponent,
     ListTestimonialsComponent,
-    ListTestimonialsForAdminComponent
+    ListTestimonialsForAdminComponent,
+    EditTestimonialComponent,
+    DeleteTestimonialComponent
   ],
   providers: [TestimonialsService],
   imports: [CommonModule, FormsModule],
-  exports: [ListTestimonialsComponent, ListTestimonialsForAdminComponent]
+  exports: [ListTestimonialsComponent, ListTestimonialsForAdminComponent, EditTestimonialComponent, DeleteTestimonialComponent]
 })
 
 export class TestimonialsModule { }

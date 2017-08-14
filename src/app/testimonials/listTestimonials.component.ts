@@ -21,7 +21,6 @@ export class ListTestimonialsComponent {
   ngOnInit(){
   this.TestimonialsService.getDataApproved()
       .subscribe(data => {
-        console.log(data)
         this.testimonials = data
       })
   }

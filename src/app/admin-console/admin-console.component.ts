@@ -16,6 +16,9 @@ export class AdminConsoleComponent {
   categoryDelete: boolean = false;
   category;
   testimonialsList: boolean = false;
+  testimonialEdit: boolean = false;
+  testimonialDelete: boolean = false;
+  testimonial;
 
 
   clickProductAdd () {
@@ -54,6 +57,8 @@ export class AdminConsoleComponent {
     this.categoryDelete = false;
     this.categoriesList = false;
     this.testimonialsList = false; 
+    this.testimonialEdit = false;
+    this.testimonialDelete = false;
   }
 
     editProductDataRecieved (data) {
@@ -68,15 +73,27 @@ export class AdminConsoleComponent {
     this.product = data
   }
 
-  editDataRecieved (data) {
+  editCategoryDataRecieved (data) {
     this.makeAllPropsFalse ();
     this.categoryEdit = true;
     this.category = data;
   }
 
-  deleteDataRecieved (data) {
+  deleteCategoryDataRecieved (data) {
     this.makeAllPropsFalse ();
     this.categoryDelete = true;
     this.category = data
   }
+
+  editTestimonialDataRecieved (data) {
+    this.makeAllPropsFalse ();
+    this.testimonialEdit = true;
+    this.testimonial = data
+  }
+
+  deleteTestimonialDataRecieved (data) {
+    this.makeAllPropsFalse ();
+    this.testimonialDelete = true;
+    this.testimonial = data
+  }  
 }

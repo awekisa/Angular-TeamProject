@@ -25,7 +25,7 @@ export class TestimonialsService {
         return this.http.post(`testimonials/edit/${testimonialId}`, testimonial, true)
     }
 
-    delete (testimonial, testimonialId){
+    delete (testimonialId, testimonial){
         return this.http.post(`testimonials/delete/${testimonialId}`,testimonial, true)
     }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {TestimonialsService} from './testimonial.service'
 import {TestimonialModel} from '../models/testimonial.model'
 
@@ -23,14 +24,15 @@ export class CreateTestimonialComponent {
 
   testimonial: TestimonialModel
 
-  constructor(private TestimonialsService: TestimonialsService){
+  constructor(
+    private TestimonialsService: TestimonialsService,
+  private router: Router){
    this.testimonial = new TestimonialModel('')
   }
 
   submitTestimonial(){
-    console.log(this.testimonial)
    this.TestimonialsService.create(this.testimonial).subscribe(res => {
-      console.log(res)
+      this.router.navigateByUrl('/testimonials/all');
     })
   }
 

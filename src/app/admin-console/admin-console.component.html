@@ -47,11 +47,13 @@
   </div>
   <div *ngIf='categoriesList'>
     <category-table 
-      (editCategoryInfo)='editDataRecieved($event)'
-      (deleteCategoryInfo)='deleteDataRecieved($event)'></category-table>
+      (editCategoryInfo)='editCategoryDataRecieved($event)'
+      (deleteCategoryInfo)='deleteCategoryDataRecieved($event)'></category-table>
   </div>
   <div *ngIf='testimonialsList'>
-   <testimonialsTable></testimonialsTable>
+   <testimonialsTable
+    (editTestimonialInfo)='editTestimonialDataRecieved($event)'
+    (deleteTestimonialInfo)='deleteTestimonialDataRecieved($event)'></testimonialsTable>
   </div>
 
   <div *ngIf='productEdit'>
@@ -67,4 +69,10 @@
   <div *ngIf='categoryDelete'>
     <delete-category [category]='category' (redirectToCategories)='clickCategoriesList($event)'></delete-category>
   </div>
+    <div *ngIf='testimonialEdit'>
+    <edit-testimonial [testimonial]='testimonial' (redirectToTestimonials)='clickTestimonialsList($event)'></edit-testimonial>
+  </div>
+   <div *ngIf='testimonialDelete'>
+    <delete-testimonial [testimonial]='testimonial' (redirectToTestimonials)='clickTestimonialsList($event)'></delete-testimonial>
+  </div> 
 </div>
